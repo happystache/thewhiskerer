@@ -43,7 +43,7 @@ header {
 
 /* Logo container - place below the menu */
 header .logo {
-    margin-bottom: 20px; /* Added margin to space logo from hamburger button */
+    margin-bottom: 15px; /* Reduced margin to decrease spacing */
     display: flex;
     justify-content: center; /* Center the logo */
     align-items: center;
@@ -64,8 +64,8 @@ header .logo img {
     z-index: 10; /* Ensure it's above other elements */
     transition: transform 0.3s ease; /* Add transition for smooth scaling */
     position: relative;
-    top: 10px; /* Position it below the logo */
-    margin: 10px 0; /* Add margin for equal spacing above and below */
+    top: 2px; /* Reduced positioning */
+    margin: 2px 0; /* Reduced margin by half */
     width: 35px; /* Size for better visibility */
     height: 25px; /* Size for better visibility */
 }
@@ -111,13 +111,13 @@ header .logo img {
     align-items: center;
     width: 100%;
     background-color: #9a1a0c;
-    padding: 12px 0; /* Added padding for equal spacing top and bottom */
+    padding: 9px 0; /* Reduced padding for equal spacing top and bottom */
     border-radius: 5px;
 }
 
 /* Menu item spacing */
 .menu-left.dropdown li {
-    margin: 8px 0; /* Even margin top and bottom for each item */
+    margin: 6px 0; /* Even margin top and bottom for each item */
 }
 
 /* Ensure the links are centered and have proper padding */
