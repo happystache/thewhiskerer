@@ -1,8 +1,5 @@
-/* Import the Inter Tight font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
-
 /* Header Styles */
-header {
+header {       
     background-color: #9a1a0c; /* Red background */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow */
     padding: 20px 0; /* Add vertical padding */
@@ -47,52 +44,61 @@ header .logo {
 }
 
 header .logo img {
-    width: 150px; /* Set logo size */
-    height: auto;
+    width: 440px; /* Base logo size doubled for standard screens */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+/* Dropdown menu styling */
+.menu-left {
+    display: flex; /* Default display of the menu */
+    flex-direction: row;
+    align-items: center;
+}
+
+.menu-left.dropdown {
+    display: none; /* Hide dropdown by default */
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #9a1a0c;
+    padding-top: 10px;
+}
+
+.menu-left.dropdown li {
+    margin: 10px 0; /* Space between dropdown items */
 }
 
 /* Media Queries for responsiveness */
 
-/* For small screens (mobile phones in portrait mode) */
-@media (max-width: 480px) {
-    .menu-left li {
-        margin: 0 10px; /* Reduce space between items */
+/* For screens smaller than 605px */
+@media (max-width: 605px) {
+    /* Hide regular menu and show hamburger */
+    .menu-left {
+        display: none; /* Hide regular menu */
     }
 
-    .menu-left a {
-        padding: 8px 10px; /* Smaller padding for mobile */
+    .hamburger {
+        display: flex; /* Show hamburger icon */
     }
 
-    header .logo img {
-        width: 100px; /* Smaller logo size */
-    }
-}
-
-/* For medium screens (small tablets or larger phones in landscape mode) */
-@media (min-width: 481px) and (max-width: 768px) {
-    .menu-left li {
-        margin: 0 15px; /* Adjust space between items */
-    }
-
-    header .logo img {
-        width: 120px; /* Medium logo size */
-    }
-}
-
-/* For large screens (tablets or laptops) */
-@media (min-width: 769px) and (max-width: 1024px) {
-    header .logo img {
-        width: 140px; /* Logo size for large screens */
-    }
-}
-
-/* For extra-large screens (desktops and larger laptops) */
-@media (min-width: 1025px) {
-    .menu-left li {
-        margin: 0 20px; /* Space between items */
-    }
-
-    header .logo img {
-        width: 150px; /* Standard logo size */
+    /* When dropdown menu is active */
+    .menu-left.dropdown.active {
+        display: flex; /* Show dropdown menu */
     }
 }
