@@ -43,7 +43,7 @@ header {
 
 /* Logo container - place below the menu */
 header .logo {
-    margin-bottom: 15px; /* Reduced margin to decrease spacing */
+    margin: 0; /* Remove margin to ensure equal spacing */
     display: flex;
     justify-content: center; /* Center the logo */
     align-items: center;
@@ -64,8 +64,8 @@ header .logo img {
     z-index: 10; /* Ensure it's above other elements */
     transition: transform 0.3s ease; /* Add transition for smooth scaling */
     position: relative;
-    top: 2px; /* Reduced positioning */
-    margin: 2px 0; /* Reduced margin by half */
+    top: 5px; /* Reduced positioning by a quarter */
+    margin: 5px 0; /* Reduced margin for equal spacing */
     width: 35px; /* Size for better visibility */
     height: 25px; /* Size for better visibility */
 }
@@ -111,7 +111,7 @@ header .logo img {
     align-items: center;
     width: 100%;
     background-color: #9a1a0c;
-    padding: 9px 0; /* Reduced padding for equal spacing top and bottom */
+    padding: 8px 0; /* Equal padding top and bottom for balance */
     border-radius: 5px;
 }
 
