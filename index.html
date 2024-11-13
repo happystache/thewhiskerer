@@ -12,17 +12,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-
 <body>
+
     <header>
         <!-- Hamburger Icon -->
-        <div class="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
+        <div class="hamburger" aria-label="Toggle Menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
         </div>
         
-        <!-- Left Menu (hidden on smaller screens, shows when active) -->
+        <!-- Logo in the center -->
+        <div class="logo">
+            <img src="assets/images/row.png" alt="Logo">
+        </div>
+        
+        <!-- Left Menu (moved below the logo) -->
         <ul class="menu-left">
             <li><a href="#home">Home</a></li>
             <li><a href="#statement">Statement</a></li>
@@ -30,11 +35,6 @@
             <li><a href="#merch">Merch</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        
-        <!-- Logo in the center -->
-        <div class="logo">
-            <img src="assets/images/row.png" alt="Logo">
-        </div>
         
         <!-- Empty space for potential future content on the right -->
         <div class="empty-space"></div>
