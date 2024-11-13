@@ -1,0 +1,98 @@
+/* Import the Inter Tight font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+/* Header Styles */
+header {
+    background-color: #9a1a0c; /* Red background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow */
+    padding: 20px 0; /* Add vertical padding */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    width: 100%; /* Full width */
+    font-family: 'Inter', sans-serif; /* Apply Inter font */
+    max-width: 100vw; /* Prevent overflow */
+    box-sizing: border-box; /* Include padding and borders */
+}
+
+/* Centered Menu */
+.menu-left {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center; /* Center menu items */
+}
+
+.menu-left li {
+    margin: 0 20px; /* Add space between menu items */
+}
+
+.menu-left a {
+    color: white; /* White font color */
+    font-weight: bold; /* Bold font */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 15px; /* Adjust padding for menu items */
+    display: block; /* Block level to apply padding */
+}
+
+.menu-left a:hover {
+    background-color: #e74c3c; /* Slightly lighter red on hover */
+    border-radius: 5px; /* Rounded corners on hover */
+}
+
+/* Logo container - place below the menu */
+header .logo {
+    margin-top: 15px; /* Add space between menu and logo */
+}
+
+header .logo img {
+    width: 150px; /* Set logo size */
+    height: auto;
+}
+
+/* Media Queries for responsiveness */
+
+/* For small screens (mobile phones in portrait mode) */
+@media (max-width: 480px) {
+    .menu-left li {
+        margin: 0 10px; /* Reduce space between items */
+    }
+
+    .menu-left a {
+        padding: 8px 10px; /* Smaller padding for mobile */
+    }
+
+    header .logo img {
+        width: 100px; /* Smaller logo size */
+    }
+}
+
+/* For medium screens (small tablets or larger phones in landscape mode) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .menu-left li {
+        margin: 0 15px; /* Adjust space between items */
+    }
+
+    header .logo img {
+        width: 120px; /* Medium logo size */
+    }
+}
+
+/* For large screens (tablets or laptops) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    header .logo img {
+        width: 140px; /* Logo size for large screens */
+    }
+}
+
+/* For extra-large screens (desktops and larger laptops) */
+@media (min-width: 1025px) {
+    .menu-left li {
+        margin: 0 20px; /* Space between items */
+    }
+
+    header .logo img {
+        width: 150px; /* Standard logo size */
+    }
+}
