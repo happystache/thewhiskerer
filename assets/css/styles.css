@@ -103,7 +103,7 @@ header .header-content {
 }
 
 /* For screens between 595px and 767px (Tablet-sized screens) */
-@media (max-width: 767px) and (min-width: 595px) {
+@media (max-width: 767px) and (min-width: 695px) {
     .nav-menu {
         display: flex; /* Ensure navbar is visible in this range */
     }
