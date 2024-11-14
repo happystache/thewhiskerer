@@ -103,7 +103,7 @@ header .header-content {
 }
 
 /* For screens between 595px and 767px (Tablet-sized screens) */
-@media (max-width: 767px) and (min-width: 695px) {
+@media (max-width: 767px) and (min-width: 595px) {
     .nav-menu {
         display: flex; /* Ensure navbar is visible in this range */
     }
@@ -152,6 +152,7 @@ header .header-content {
         font-size: 24px; /* Smaller font size for very small screens */
     }
 }
+ 
 
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@400&display=swap');
@@ -171,6 +172,7 @@ main {
     gap: 20px; /* Add consistent spacing between the containers */
     padding: 20px; /* Add padding around the containers */
     margin-top: 275px; /* Slightly increase space between header and main content */
+    min-height: 300px; /* Ensure there's enough space between header and containers */
 }
 
 /* Mission Statement and Rating System Containers */
@@ -208,6 +210,8 @@ main {
 @media (max-width: 695px) {
     main {
         flex-direction: column; /* Stack the containers vertically */
+        margin-top: calc(275px - 20vh); /* Adjust space above based on viewport height */
+        min-height: auto; /* Allow height to adjust automatically */
     }
 
     .mission-container, .rating-container {
