@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +11,11 @@
     <!-- GoogleFonts Dancing Script and Inter Tight-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
 
     <header>
@@ -19,12 +23,12 @@
         <div class="logo">
             <img src="assets/images/row.png" alt="Logo">
         </div>
-    
+
         <!-- Hamburger Button for Mobile -->
         <div class="hamburger" id="hamburger-icon">
             <i class="fas fa-bars"></i> <!-- Font Awesome Hamburger Icon -->
         </div>
-    
+
         <!-- Navigation Menu Section -->
         <nav class="nav-menu">
             <ul>
@@ -37,13 +41,30 @@
         </nav>
     </header>
 
+
+    <!-- Main Body Section -->
+<main>
+    <!-- Mission Statement Container -->
+    <div class="mission-container">
+        <h2>Mission Statement</h2>
+        <p>Placeholder for mission statement content...</p>
+    </div>
+
+    <!-- Rating System Container -->
+    <div class="rating-container">
+        <h2>Rating System</h2>
+        <p>Placeholder for rating system content...</p>
+    </div>
+</main>
+
+
     <!-- FontAwesome Script -->
     <script src="https://kit.fontawesome.com/9e762cc9ca.js" crossorigin="anonymous"></script>
-    
+
     <!-- Custom JS to toggle the nav menu visibility -->
     <script>
         // JavaScript to toggle the navigation menu on mobile
-        document.getElementById('hamburger-icon').addEventListener('click', function() {
+        document.getElementById('hamburger-icon').addEventListener('click', function () {
             document.querySelector('.nav-menu').classList.toggle('open');
         });
     </script>
@@ -51,4 +72,5 @@
     <!-- Link to custom JS -->
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>

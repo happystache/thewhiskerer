@@ -152,3 +152,65 @@ header .header-content {
         font-size: 24px; /* Smaller font size for very small screens */
     }
 }
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@400&display=swap');
+
+/* Basic Body Layout */
+body {
+    font-family: 'Inter', sans-serif; /* Default body font */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main Body Section - Ensures two containers appear side by side or stack when needed */
+main {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space the containers evenly */
+    gap: 20px; /* Add consistent spacing between the containers */
+    padding: 20px; /* Add padding around the containers */
+    margin-top: 275px; /* Slightly increase space between header and main content */
+}
+
+/* Mission Statement and Rating System Containers */
+.mission-container, .rating-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px; /* Inside padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+    min-height: 150px; /* Minimum height for visibility */
+    flex: 1; /* Ensure both containers take equal width */
+}
+
+/* Title styling - Using Dancing Script (bold) */
+.mission-container h2, .rating-container h2 {
+    font-family: 'Dancing Script', cursive; /* Applying Dancing Script for headings */
+    font-weight: 700; /* Bold weight for headings */
+    font-size: 30px; /* Slightly increased font size */
+    color: #333;
+    margin-bottom: 5px; /* Reduced space between heading and content */
+    margin-top: 0; /* Reduced space between the container top and heading */
+}
+
+/* Text styling - Using Inter Tight */
+.mission-container p, .rating-container p {
+    font-family: 'Inter', sans-serif; /* Applying Inter for paragraph text */
+    font-weight: 400; /* Regular weight for text */
+    letter-spacing: -0.5px; /* Tighter letter spacing */
+    font-size: 16px;
+    color: #555;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For screens 695px and below */
+@media (max-width: 695px) {
+    main {
+        flex-direction: column; /* Stack the containers vertically */
+    }
+
+    .mission-container, .rating-container {
+        margin-bottom: 20px; /* Add space between stacked containers */
+    }
+}
