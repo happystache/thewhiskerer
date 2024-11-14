@@ -1,179 +1,111 @@
-/* Header Styles */
+/* Header styles */
 header {
-    background-color: #9a1a0c; /* Red background */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slight shadow */
-    padding: 20px 0; /* Add vertical padding */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ff0000; /* Set background color to red */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Simple shadow */
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Ensure the content stays centered */
-    width: 100%; /* Full width */
-    font-family: 'Inter', sans-serif; /* Apply Inter font */
-    max-width: 100vw; /* Prevent overflow */
-    box-sizing: border-box; /* Include padding and borders */
-    position: relative; /* Fix positioning issues */
-}
-
-/* Menu Styles (for desktop screens) */
-.menu-left {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-    justify-content: center; /* Center menu items */
-    width: 100%; /* Ensure the menu stretches across the screen */
-}
-
-.menu-left li {
-    margin: 0 15px; /* Reduced space between menu items by a third */
-}
-
-.menu-left a {
-    color: white; /* White font color */
-    font-weight: bold; /* Bold font */
-    text-decoration: none; /* Remove underline */
-    padding: 10px 15px; /* Adjust padding for menu items */
-    display: block; /* Block level to apply padding */
-}
-
-.menu-left a:hover {
-    background-color: #e74c3c; /* Slightly lighter red on hover */
-    border-radius: 5px; /* Rounded corners on hover */
-}
-
-/* Logo container - place below the menu */
-header .logo {
-    margin: 0; /* Remove margin to ensure equal spacing */
-    display: flex;
-    justify-content: center; /* Center the logo */
+    flex-direction: column; /* Stacks logo and nav vertically */
     align-items: center;
+    padding: 10px 0;
+    z-index: 1000; /* Keeps header above other content */
 }
 
 header .logo img {
-    width: 100%; /* Make the logo responsive */
-    max-width: 880px; /* Limit the max size */
-    height: auto; /* Maintain aspect ratio */
+    height: 175px; /* Initial size */
+    max-width: 100%; /* Ensures logo never overflows the screen */
+    width: 100%; /* Ensures the logo resizes proportionally */
+    object-fit: contain; /* Prevents logo from getting stretched */
 }
 
-/* Hamburger Menu Styles */
-.hamburger {
-    display: none; /* Hidden by default */
-    flex-direction: column;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 10; /* Ensure it's above other elements */
-    transition: transform 0.3s ease; /* Add transition for smooth scaling */
-    position: relative;
-    top: 5px; /* Reduced positioning by a quarter */
-    margin: 5px 0; /* Reduced margin for equal spacing */
-    width: 35px; /* Size for better visibility */
-    height: 25px; /* Size for better visibility */
-}
-
-/* Adjust the width and height of the bars */
-.hamburger .bar {
-    width: 100%; /* Ensure the bars stretch the full width of the hamburger icon */
-    height: 5px; /* Larger height for bars */
-    background-color: white;
-    margin: 4px 0; /* Space between bars */
-    border-radius: 5px; /* Rounded corners for the bars */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transitions */
-}
-
-/* Rotate bars into a cross when active */
-.hamburger.active .bar {
-    width: 100%; /* Width remains consistent for the active state */
-}
-
-/* Rotate the first and third bars into a cross */
-.hamburger.active .bar:nth-child(1) {
-    transform: rotate(45deg); /* Rotate the first bar */
-    transform-origin: 0.1em 0.1em; /* Set the rotation point */
-}
-
-.hamburger.active .bar:nth-child(2) {
-    opacity: 0; /* Hide the middle bar */
-}
-
-.hamburger.active .bar:nth-child(3) {
-    transform: rotate(-45deg); /* Rotate the third bar */
-    transform-origin: 0.1em 0.1em; /* Set the rotation point */
-}
-
-/* Dropdown menu styling */
-.menu-left {
-    display: flex; /* Default display for menu */
-}
-
-.menu-left.dropdown {
-    display: none; /* Hide dropdown by default */
-    flex-direction: column;
+.nav-menu {
+    display: flex;
     align-items: center;
+    justify-content: center; /* Center the nav items */
     width: 100%;
-    background-color: #9a1a0c;
-    padding: 8px 0; /* Equal padding top and bottom for balance */
-    border-radius: 5px;
 }
 
-/* Menu item spacing */
-.menu-left.dropdown li {
-    margin: 6px 0; /* Even margin top and bottom for each item */
+.nav-menu ul {
+    display: flex; /* Horizontal layout by default */
+    list-style: none;
+    padding: 0;
+    margin-top: 10px; /* Adds space between logo and nav */
+    justify-content: center; /* Ensures menu is centered */
 }
 
-/* Ensure the links are centered and have proper padding */
-.menu-left.dropdown a {
-    padding: 12px 20px; /* Even padding on all sides of the links */
-    display: block;
-    text-align: center; /* Center text inside the link */
+.nav-menu ul li {
+    margin: 0 15px; /* Spacing between nav items */
 }
 
-/* Hover effect for the dropdown items */
-.menu-left.dropdown a:hover {
-    background-color: #e74c3c;
-    border-radius: 5px;
+.nav-menu ul li a {
+    text-decoration: none;
+    color: white; /* Set font color to white */
+    font-family: 'Dancing Script', cursive; /* Changed font */
+    font-size: 32px; /* Increased font size by 2 */
+    font-weight: bold; /* Bolded font */
 }
 
-/* Media Queries for responsiveness */
+/* Hamburger Icon */
+.hamburger {
+    display: none; /* Hide by default */
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 15px; /* Decreased space below the hamburger by a quarter */
+}
 
-/* For screens smaller than 605px */
-@media (max-width: 605px) {
-    /* Show hamburger and hide menu */
+/* Media Queries for Responsiveness */
+
+/* For tablet and smaller screens (max-width: 768px) */
+@media (max-width: 768px) {
+    header .logo img {
+        height: 140px; /* Slightly smaller logo for smaller screens */
+        width: 100%; /* Ensures logo resizes proportionally */
+    }
+
+    .nav-menu ul {
+        display: none; /* Hide the navigation by default */
+        flex-direction: column; /* Stack the nav items vertically */
+        margin-top: 20px;
+    }
+
+    .nav-menu ul li {
+        margin: 10px 0; /* Adds more space between nav items */
+    }
+
+    .nav-menu ul li a {
+        font-size: 28px; /* Slightly smaller font size for mobile */
+    }
+
+    /* Show the hamburger icon only on smaller screens */
     .hamburger {
-        display: flex; /* Show hamburger icon */
-        position: relative;
-        top: 0; /* Ensure hamburger is below the logo */
+        display: block; /* Display hamburger on smaller screens */
     }
 
-    /* Hide regular menu */
-    .menu-left {
-        display: none;
-    }
-
-    /* When dropdown menu is active */
-    .menu-left.dropdown.active {
-        display: flex; /* Show dropdown menu */
-        position: absolute;
-        top: 70px; /* Adjusted space from the header bottom edge */
-        left: 50%;
-        transform: translateX(-50%); /* Center the dropdown */
-        width: 100%; /* Make dropdown take full width */
+    /* When the hamburger menu is clicked, show the nav items */
+    .nav-menu.open ul {
+        display: flex; /* Show the navigation items when open */
     }
 }
 
-/* For screens smaller than 480px */
+/* For very small screens (max-width: 480px) */
 @media (max-width: 480px) {
     header .logo img {
-        width: 90%; /* Make the logo smaller on very small screens */
-        max-width: 500px; /* Adjust logo max width */
+        height: 100px; /* Smaller logo for very small screens */
+        width: 100%; /* Ensures logo resizes proportionally */
     }
 
-    .menu-left {
-        font-size: 14px; /* Reduce font size of the menu items */
+    .nav-menu ul {
+        flex-direction: column; /* Stacks the nav items vertically */
+        margin-top: 15px;
     }
 
-    /* Ensure the logo and hamburger are centered */
-    header {
-        flex-direction: column; /* Stack header elements */
-        justify-content: center;
+    .nav-menu ul li {
+        margin: 8px 0; /* Adds more space between nav items */
+    }
+
+    .nav-menu ul li a {
+        font-size: 24px; /* Smaller font size for very small screens */
     }
 }

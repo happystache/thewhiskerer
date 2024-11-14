@@ -15,34 +15,40 @@
 <body>
 
     <header>
-        <!-- Hamburger Icon -->
-        
-        
-        <!-- Logo in the center -->
+        <!-- Logo Section -->
         <div class="logo">
             <img src="assets/images/row.png" alt="Logo">
         </div>
-        
-        <!-- Left Menu (moved below the logo) -->
-        <ul class="menu-left">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#statement">Statement</a></li>
-            <li><a href="#reviews">Reviews</a></li>
-            <li><a href="#merch">Merch</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-
-        <div class="hamburger" aria-label="Toggle Menu">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+    
+        <!-- Hamburger Button for Mobile -->
+        <div class="hamburger" id="hamburger-icon">
+            <i class="fas fa-bars"></i> <!-- Font Awesome Hamburger Icon -->
         </div>
-        
-        <!-- Empty space for potential future content on the right -->
-        <div class="empty-space"></div>
+    
+        <!-- Navigation Menu Section -->
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#merch">Merch</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
+    <!-- FontAwesome Script -->
     <script src="https://kit.fontawesome.com/9e762cc9ca.js" crossorigin="anonymous"></script>
+    
+    <!-- Custom JS to toggle the nav menu visibility -->
+    <script>
+        // JavaScript to toggle the navigation menu on mobile
+        document.getElementById('hamburger-icon').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('open');
+        });
+    </script>
+
+    <!-- Link to custom JS -->
     <script src="assets/js/script.js"></script>
 </body>
 </html>
