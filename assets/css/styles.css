@@ -2,7 +2,8 @@
 header {
     position: fixed;
     top: 0;
-    width: 100%;
+    left: 0; /* Ensure it starts at the left edge */
+    width: 100vw; /* Ensure the header spans the entire viewport width */
     background-color: #ff0000; /* Set background color to red */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Simple shadow */
     display: flex;
@@ -10,6 +11,7 @@ header {
     align-items: center;
     padding: 10px 0;
     z-index: 1000; /* Keeps header above other content */
+    margin: 0; /* Ensure no margin around the header */
 }
 
 header .logo img {
@@ -19,6 +21,14 @@ header .logo img {
     object-fit: contain; /* Prevents logo from getting stretched */
 }
 
+/* Adjusted flex container for the logo and hamburger */
+header .header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Navigation Menu */
 .nav-menu {
     display: flex;
     align-items: center;
@@ -38,12 +48,24 @@ header .logo img {
     margin: 0 15px; /* Spacing between nav items */
 }
 
+/* Nav item styling */
 .nav-menu ul li a {
     text-decoration: none;
     color: white; /* Set font color to white */
     font-family: 'Dancing Script', cursive; /* Changed font */
     font-size: 32px; /* Increased font size by 2 */
     font-weight: bold; /* Bolded font */
+    padding: 8px 16px; /* Add padding for clickable area */
+    border-radius: 12px; /* Rounded borders */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for color change */
+}
+
+/* Hover and active state for nav items */
+.nav-menu ul li a:hover,
+.nav-menu ul li a:focus,
+.nav-menu ul li a:active {
+    background-color: #ff8000; /* Light orange background on hover */
+    color: #fff; /* Keep the text color white */
 }
 
 /* Hamburger Icon */
@@ -52,52 +74,62 @@ header .logo img {
     font-size: 30px;
     color: white;
     cursor: pointer;
-    margin-bottom: 15px; /* Decreased space below the hamburger by a quarter */
+    margin-top: 7px; /* Reduced space above by a third */
+    margin-bottom: 7px; /* Added more space below by a quarter */
 }
 
 /* Media Queries for Responsiveness */
 
-/* For tablet and smaller screens (max-width: 768px) */
-@media (max-width: 768px) {
+/* For xl, large, and tablet screens (above 768px, show navbar by default) */
+@media (min-width: 769px) {
+    .nav-menu {
+        display: flex; /* Always show navbar on larger screens */
+    }
+    .hamburger {
+        display: none; /* Hide hamburger icon on larger screens */
+    }
+}
+
+/* For screens between 588px and 768px (show navbar by default) */
+@media (max-width: 768px) and (min-width: 588px) {
     header .logo img {
         height: 140px; /* Slightly smaller logo for smaller screens */
         width: 100%; /* Ensures logo resizes proportionally */
     }
 
-    .nav-menu ul {
-        display: none; /* Hide the navigation by default */
-        flex-direction: column; /* Stack the nav items vertically */
-        margin-top: 20px;
+    .nav-menu {
+        display: flex; /* Show the navbar by default */
     }
 
-    .nav-menu ul li {
-        margin: 10px 0; /* Adds more space between nav items */
-    }
-
-    .nav-menu ul li a {
-        font-size: 28px; /* Slightly smaller font size for mobile */
-    }
-
-    /* Show the hamburger icon only on smaller screens */
+    /* Hide the hamburger icon in this range */
     .hamburger {
-        display: block; /* Display hamburger on smaller screens */
-    }
-
-    /* When the hamburger menu is clicked, show the nav items */
-    .nav-menu.open ul {
-        display: flex; /* Show the navigation items when open */
+        display: none; /* Don't show hamburger here */
     }
 }
 
-/* For very small screens (max-width: 480px) */
-@media (max-width: 480px) {
+/* For smaller screens (max-width: 588px) */
+@media (max-width: 588px) {
     header .logo img {
         height: 100px; /* Smaller logo for very small screens */
         width: 100%; /* Ensures logo resizes proportionally */
     }
 
+    .nav-menu {
+        display: none; /* Hide the navbar by default */
+    }
+
+    /* Show the hamburger icon only on very small screens */
+    .hamburger {
+        display: block; /* Show hamburger on very small screens */
+    }
+
+    /* When the hamburger menu is clicked, display the nav items */
+    .nav-menu.open {
+        display: flex; /* Show the navigation items when the menu is open */
+    }
+
     .nav-menu ul {
-        flex-direction: column; /* Stacks the nav items vertically */
+        flex-direction: column; /* Stack the nav items vertically */
         margin-top: 15px;
     }
 
