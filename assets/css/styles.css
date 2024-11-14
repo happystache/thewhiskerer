@@ -34,6 +34,7 @@ header .header-content {
     align-items: center;
     justify-content: center; /* Center the nav items */
     width: 100%;
+    flex-wrap: nowrap; /* Prevent wrapping and keep the items in a single line */
 }
 
 .nav-menu ul {
@@ -45,7 +46,7 @@ header .header-content {
 }
 
 .nav-menu ul li {
-    margin: 0 15px; /* Spacing between nav items */
+    margin: 0 6px; /* Reduced the space between nav items by a quarter */
 }
 
 /* Nav item styling */
@@ -80,35 +81,45 @@ header .header-content {
 
 /* Media Queries for Responsiveness */
 
-/* For xl, large, and tablet screens (above 768px, show navbar by default) */
-@media (min-width: 769px) {
-    .nav-menu {
-        display: flex; /* Always show navbar on larger screens */
-    }
-    .hamburger {
-        display: none; /* Hide hamburger icon on larger screens */
+/* For screens above 1200px (XL screens) */
+@media (min-width: 1200px) {
+    .nav-menu ul li a {
+        font-size: 36px; /* Increase font size for larger screens */
     }
 }
 
-/* For screens between 588px and 768px (show navbar by default) */
-@media (max-width: 768px) and (min-width: 588px) {
+/* For screens between 992px and 1199px (Large screens) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .nav-menu ul li a {
+        font-size: 34px; /* Slightly smaller font size for large screens */
+    }
+}
+
+/* For screens between 768px and 991px (Tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .nav-menu ul li a {
+        font-size: 30px; /* Slightly smaller font size for tablets */
+    }
+}
+
+/* For screens between 595px and 767px (Tablet-sized screens) */
+@media (max-width: 767px) and (min-width: 595px) {
+    .nav-menu {
+        display: flex; /* Ensure navbar is visible in this range */
+    }
+
+    .hamburger {
+        display: none; /* Hide hamburger icon */
+    }
+
     header .logo img {
         height: 140px; /* Slightly smaller logo for smaller screens */
         width: 100%; /* Ensures logo resizes proportionally */
     }
-
-    .nav-menu {
-        display: flex; /* Show the navbar by default */
-    }
-
-    /* Hide the hamburger icon in this range */
-    .hamburger {
-        display: none; /* Don't show hamburger here */
-    }
 }
 
-/* For smaller screens (max-width: 588px) */
-@media (max-width: 588px) {
+/* For screens below 595px (Trigger hamburger) */
+@media (max-width: 594px) {
     header .logo img {
         height: 100px; /* Smaller logo for very small screens */
         width: 100%; /* Ensures logo resizes proportionally */
